@@ -113,7 +113,7 @@ For more details, see `presentation.pdf` or the project description in my [portf
 
 ## License
 
-This project contains proprietary research data. Please contact the authors for usage permissions.
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
 ## Context
 

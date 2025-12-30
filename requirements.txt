@@ -1,0 +1,27 @@
+# Core Dependencies
+numpy>=1.21.0
+matplotlib>=3.4.0
+scipy>=1.7.0
+
+# Deep Learning
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Model Analysis and Utilities
+torchinfo>=1.7.0
+tqdm>=4.62.0
+
+# Data Processing
+h5py>=3.6.0
+
+# Jupyter Notebook (Optional - if running notebooks)
+jupyter>=1.0.0
+notebook>=6.4.0
+ipykernel>=6.0.0
+ipywidgets>=7.6.0
+
+# ONNX Export
+onnx>=1.12.0
+onnxruntime>=1.12.0
+

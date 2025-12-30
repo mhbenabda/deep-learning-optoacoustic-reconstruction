@@ -1,6 +1,6 @@
 # Deep Learning for Optoacoustic Image Reconstruction
 
-A deep learning approach for real-time optoacoustic (photoacoustic) image reconstruction using U-Net architecture, with FPGA deployment capability for accelerated inference.
+A deep learning approach for real-time optoacoustic (photoacoustic) image reconstruction using U-Net architecture, with FPGA deployment capability on Kria K260 for accelerated inference.
 
 ## Overview
 
@@ -77,51 +77,8 @@ pip install -r requirements.txt
 - PyTorch with CUDA support (recommended)
 - NumPy, Matplotlib, h5py
 - torchinfo for model summaries
+- Vitis-AI docker
 
-## Usage
-
-### Training
-
-Open and run `models/unet5-256ch.ipynb`:
-
-```python
-# Load data
-train_data_input, train_data_label, test_data_input, test_data_label = get_data()
-
-# Train model
-model = train_model(train_data_input, train_data_label)
-
-# Test model
-test_model(model, test_data_input, test_data_label)
-```
-
-Training configuration:
-- Optimizer: Adam (lr=1e-3, weight_decay=1e-5)
-- Loss function: MSE
-- Batch size: 32
-- Epochs: 25
-
-### Inference
-
-```python
-# Load trained model
-model = Unet5()
-model.load_state_dict(torch.load('best_unet5.pth'))
-model.eval()
-
-# Perform inference
-with torch.no_grad():
-    output = model(input_tensor)
-```
-
-**Performance:** ~6 FPS on CPU (167ms per frame)
-
-### ONNX Export
-
-```python
-dummy_input = torch.randn(1, 1, 256, 1024)
-torch.onnx.export(model, dummy_input, "model.onnx", opset_version=11)
-```
 
 ## Results
 
@@ -152,12 +109,12 @@ The `standard_reconstruction/` directory implements traditional delay-and-sum (b
 
 ## References
 
-For more details, see `presentation.pdf`.
+For more details, see `presentation.pdf` or the project description in my [portfolio](https://mhbenabda.github.io/projects/4_project/).
 
 ## License
 
 This project contains proprietary research data. Please contact the authors for usage permissions.
 
-## Authors
+## Context
 
-Developed as part of the SoC/DAML project.
+Developed as part of the SoCDAML project.
